@@ -22,12 +22,10 @@ requirements:
   host:
     - python
     - setuptools
-    - numpy 1.10.*,>=1.10.1  # [not (win and py36)]
-    - numpy 1.11.*           # [win and py36]
+    - numpy
   run:
     - python
-    - numpy >=1.10.1  # [not (win and py36)]
-    - numpy >=1.11    # [win and py36]
+    - numpy
 
 test:
   imports:
