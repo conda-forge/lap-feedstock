@@ -22,10 +22,10 @@ requirements:
   host:
     - python
     - setuptools
-    - numpy
+    - numpy 1.12.*
   run:
     - python
-    - numpy
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
