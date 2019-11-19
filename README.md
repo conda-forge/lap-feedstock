@@ -7,7 +7,7 @@ Package license: BSD-2-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Linear Assignment Problem solver (LAPJV/LAPMOD).
+Summary: Linear Assignment Problem solver (LAPJV/LAPMOD)
 
 
 
