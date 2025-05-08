@@ -1,32 +1,38 @@
-{% set version = "0.4.0" %}
+{% set version = "0.5.12" %}
+{% set name = "lap" %}
 
 package:
-  name: lap
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/l/lap/lap-{{ version }}.tar.gz
-  sha256: c4dad9976f0e9f276d8a676a6d03632c3cb7ab7c80142e3b27303d49f0ed0e3b
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lap-{{ version }}.tar.gz
+  sha256: 570b414ea7ae6c04bd49d0ec8cdac1dc5634737755784d44e37f9f668bab44fd
 
 build:
-  number: 1005
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+  
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
   host:
-    - python
+    - python {{ python_min }}
+    - setuptools >=67.8.0
+    - cython >=0.29.32
+    - numpy >=1.21.6
     - pip
-    - numpy
   run:
-    - python
-    - {{ pin_compatible('numpy') }}
-
+    - python >={{ python_min }}
+    - numpy >=1.21.6
 test:
   imports:
     - lap
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
+
 
 about:
   home: https://github.com/gatagat/lap
