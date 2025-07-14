@@ -15,6 +15,10 @@ build:
   
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -22,11 +26,11 @@ requirements:
     - python
     - setuptools >=67.8.0
     - cython >=0.29.32
-    - numpy >=1.21.6
+    - numpy
     - pip
   run:
     - python
-    - numpy >=1.21.6
+    - numpy
 test:
   imports:
     - lap
