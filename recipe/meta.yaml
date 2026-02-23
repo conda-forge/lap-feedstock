@@ -1,4 +1,4 @@
-{% set version = "0.5.12" %}
+{% set version = "0.5.13" %}
 {% set name = "lap" %}
 
 package:
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lap-{{ version }}.tar.gz
-  sha256: 570b414ea7ae6c04bd49d0ec8cdac1dc5634737755784d44e37f9f668bab44fd
+  sha256: 9eff7169e3ca452995af0493cc20d35452c4bfd06122c36c06457119ffbd411b
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
-  
+  number: 0
+
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
