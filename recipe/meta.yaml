@@ -1,4 +1,4 @@
-{% set version = "0.5.13" %}
+{% set version = "0.5.14" %}
 {% set name = "lap" %}
 
 package:
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/lap-{{ version }}.tar.gz
-  sha256: 9eff7169e3ca452995af0493cc20d35452c4bfd06122c36c06457119ffbd411b
+  sha256: 06488beb256649a291dc1d8bbd11920c8dc70c3e61057645f68131c479a2a549
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
